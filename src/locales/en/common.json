@@ -1,0 +1,52 @@
+{
+  "login": {
+    "badge": "ADMIN · SMART OPS",
+    "heroTitle": "Build an efficient operations cockpit",
+    "heroDescription": "Monitor KPIs in real time and manage users, policies, and tasks in one place.",
+    "highlights": [
+      {
+        "icon": "⚡",
+        "title": "Smart dispatch",
+        "desc": "Assign tasks automatically based on roles to reduce manual work."
+      },
+      {
+        "icon": "📊",
+        "title": "Live dashboards",
+        "desc": "Refresh metrics instantly and catch anomalies as soon as they happen."
+      },
+      {
+        "icon": "🔐",
+        "title": "Granular access",
+        "desc": "Fine-grained permissions that fit complex organizational structures."
+      }
+    ],
+    "stats": [
+      { "label": "Online users", "value": "1,204", "delta": "+8.4% QoQ", "trend": "up" },
+      { "label": "Pending tasks", "value": "87", "delta": "-12% QoQ", "trend": "down" },
+      { "label": "Completion rate", "value": "96%", "delta": "+3.1% QoQ", "trend": "up" }
+    ],
+    "cardTitle": "Administrator Login",
+    "cardSubtitle": "Welcome back, please sign in",
+    "form": {
+      "usernameLabel": "Username",
+      "passwordLabel": "Password",
+      "usernamePlaceholder": "Enter username",
+      "passwordPlaceholder": "Enter password",
+      "nameRequired": "Please enter username",
+      "passwordRequired": "Please enter password"
+    },
+    "options": {
+      "rememberMe": "Remember me",
+      "forgot": "Forgot password?",
+      "register": "Create account"
+    },
+    "messages": {
+      "forgot": "Please contact the administrator or reset via email.",
+      "register": "Registration is not open yet. Contact the administrator to request access.",
+      "authFailed": "Login failed, please check your username and password."
+    },
+    "actions": {
+      "signIn": "Sign In"
+    }
+  }
+}
