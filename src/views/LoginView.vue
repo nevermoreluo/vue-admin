@@ -8,14 +8,14 @@
     </div>
 
     <div class="login-box">
-      <div class="info-panel">
+      <div class="info-panel pc-only">
         <div class="info-header">
           <span class="badge">{{ t('login.badge') }}</span>
           <h1>{{ t('login.heroTitle') }}</h1>
           <p>{{ t('login.heroDescription') }}</p>
         </div>
 
-        <div class="stat-cards">
+        <!-- <div class="stat-cards">
           <div v-for="item in stats" :key="item.label" class="stat-card">
             <p class="stat-label">{{ item.label }}</p>
             <p class="stat-value">{{ item.value }}</p>
@@ -26,7 +26,7 @@
               {{ item.delta }}
             </span>
           </div>
-        </div>
+        </div> -->
 
         <div class="info-highlights">
           <div v-for="feature in highlights" :key="feature.title" class="highlight-item">
@@ -163,7 +163,7 @@ const rules = computed(() => ({
 }))
 
 type HighlightItem = { icon: string; title: string; desc: string }
-type StatItem = { label: string; value: string; delta: string; trend: 'up' | 'down' }
+// type StatItem = { label: string; value: string; delta: string; trend: 'up' | 'down' }
 
 const toArray = <T,>(value: unknown): T[] => {
   if (Array.isArray(value)) {
@@ -173,7 +173,7 @@ const toArray = <T,>(value: unknown): T[] => {
 }
 
 const highlights = computed<HighlightItem[]>(() => toArray<HighlightItem>(tm('login.highlights')))
-const stats = computed<StatItem[]>(() => toArray<StatItem>(tm('login.stats')))
+// const stats = computed<StatItem[]>(() => toArray<StatItem>(tm('login.stats')))
 
 const loading = ref(false)
 const errorMessage = ref('')
@@ -236,6 +236,13 @@ const handleLogin = async () => {
 </script>
 
 <style scoped>
+.pc-only {
+  display: block;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
 .login-container {
   position: relative;
   display: flex;
