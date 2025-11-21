@@ -48,5 +48,39 @@
     "actions": {
       "signIn": "Sign In"
     }
+  },
+  "layout": {
+    "title": "Operations Center",
+    "menu": {
+      "home": "Dashboard",
+      "about": "About"
+    },
+    "language": {
+      "label": "Language",
+      "en": "English",
+      "zh": "中文"
+    },
+    "user": {
+      "greeting": "Hello",
+      "logout": "Log out"
+    }
+  },
+  "home": {
+    "summary": {
+      "departments": "Departments",
+      "deviceTypes": "Device Types",
+      "devices": "Devices",
+      "onlineDevices": "Online Devices"
+    },
+    "charts": {
+      "usageTitle": "Device Usage",
+      "countLabel": "{count} device types"
+    },
+    "status": {
+      "loading": "Loading data..."
+    },
+    "errors": {
+      "loadFailed": "Failed to load dashboard data"
+    }
   }
 }

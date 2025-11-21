@@ -10,8 +10,9 @@ import { commonLocaleBundles } from '@/utils/locales.ts'
 import App from '@/App.vue'
 import router from '@/router'
 
-const SUPPORTED_LOCALES: string[] = ['en', 'zh-CN'] as const
-const DEFAULT_LOCALE = 'zh-CN'
+const SUPPORTED_LOCALES = ['en', 'zh-CN'] as const
+type LocaleType = (typeof SUPPORTED_LOCALES)[number]
+const DEFAULT_LOCALE: LocaleType = 'zh-CN'
 
 /**
  * Create i18n instance with proper configuration
@@ -20,11 +21,11 @@ const DEFAULT_LOCALE = 'zh-CN'
  * @returns Configured i18n instance
  */
 const createI18nInstance = (
-  locale: string,
+  locale: LocaleType,
   messages: Record<string, Record<string, string | Record<string, unknown>>>,
 ) => {
   return createI18n({
-    locale: SUPPORTED_LOCALES.includes(locale) ? locale : DEFAULT_LOCALE,
+    locale,
     fallbackLocale: DEFAULT_LOCALE,
     messages,
     missingWarn: false, // Disable missing key warnings in production
@@ -42,8 +43,15 @@ const messages = {
   },
 }
 
+const preferredLocale = localStorage.getItem('preferred-locale')
+const isSupportedLocale = (value: string | null): value is LocaleType =>
+  value !== null && SUPPORTED_LOCALES.includes(value as LocaleType)
+const initialLocale: LocaleType = isSupportedLocale(preferredLocale)
+  ? preferredLocale
+  : DEFAULT_LOCALE
+
 const app = createApp(App)
-const i18n = createI18nInstance(DEFAULT_LOCALE, messages)
+const i18n = createI18nInstance(initialLocale, messages)
 app.use(i18n)
 app.use(createPinia())
 app.use(router)

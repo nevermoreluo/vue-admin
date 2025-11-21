@@ -36,5 +36,39 @@
     "actions": {
       "signIn": "登录"
     }
+  },
+  "layout": {
+    "title": "运营中心",
+    "menu": {
+      "home": "首页",
+      "about": "关于"
+    },
+    "language": {
+      "label": "语言",
+      "en": "English",
+      "zh": "中文"
+    },
+    "user": {
+      "greeting": "您好",
+      "logout": "退出登录"
+    }
+  },
+  "home": {
+    "summary": {
+      "departments": "部门数量",
+      "deviceTypes": "设备类型",
+      "devices": "设备总数",
+      "onlineDevices": "在线设备"
+    },
+    "charts": {
+      "usageTitle": "设备使用情况",
+      "countLabel": "共 {count} 种设备类型"
+    },
+    "status": {
+      "loading": "数据加载中..."
+    },
+    "errors": {
+      "loadFailed": "仪表盘数据加载失败"
+    }
   }
 }

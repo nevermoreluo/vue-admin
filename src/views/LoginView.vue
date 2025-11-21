@@ -238,7 +238,10 @@ const handleLogin = async () => {
 <style scoped>
 .pc-only {
   display: block;
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
+  .pc-only {
     display: none;
   }
 }

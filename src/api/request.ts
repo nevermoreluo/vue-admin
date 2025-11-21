@@ -16,7 +16,7 @@ request.interceptors.request.use(
     // 自动添加token到请求头
     const token = localStorage.getItem('token')
     if (token && config.headers) {
-      config.headers.Authorization = `Bearer ${token}`
+      config.headers['sk-token'] = `${token}`
     }
     return config
   },
