@@ -1,5 +1,5 @@
 <template>
-  <el-aside :width="collapse ? '64px' : '240px'" class="app-sidebar">
+  <el-aside :width="collapse ? '64px' : '200px'" class="app-sidebar">
     <div class="brand" @click="goHome">
       <div class="logo-container">
         <el-icon class="brand-icon" :class="{ 'is-spinning': !collapse }"><Cpu /></el-icon>
@@ -10,42 +10,18 @@
     </div>
     
     <el-scrollbar>
-      <el-menu
-        :default-active="activeMenu"
-        :collapse="collapse"
-        background-color="transparent"
-        text-color="#a0aec0"
-        active-text-color="#fff"
-        class="sidebar-menu"
-        :collapse-transition="false"
-        router
-      >
-        <el-menu-item index="/">
-          <el-icon><House /></el-icon>
-          <template #title>
-            <span>{{ t('layout.menu.home') }}</span>
-          </template>
-        </el-menu-item>
-        
-        <el-menu-item index="/about">
-          <el-icon><InfoFilled /></el-icon>
-          <template #title>
-            <span>{{ t('layout.menu.about') }}</span>
-          </template>
-        </el-menu-item>
-      </el-menu>
+      <el-menu :collapse="collapse"></el-menu>
     </el-scrollbar>
   </el-aside>
 </template>
 
 <script setup lang="ts">
+import ElMenu from '@/layouts/components/AppSideMenu.vue'
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useI18n } from 'vue-i18n'
+
 import {
-  Cpu,
-  House,
-  InfoFilled,
+  Cpu
 } from '@element-plus/icons-vue'
 
 const props = defineProps<{
@@ -54,7 +30,6 @@ const props = defineProps<{
 
 const router = useRouter()
 const route = useRoute()
-const { t } = useI18n()
 
 const goHome = () => {
   router.push('/')
@@ -80,11 +55,17 @@ const activeMenu = computed(() => route.path || '/')
   height: 64px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0 16px;
+  justify-content: flex-start;
+  padding: 0 20px;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
+  transition: all 0.3s;
+}
+
+.brand.is-collapsed {
+  justify-content: center;
+  padding: 0;
 }
 
 .logo-container {
@@ -143,6 +124,15 @@ const activeMenu = computed(() => route.path || '/')
   font-size: 20px;
   margin-right: 12px;
   transition: transform 0.3s;
+}
+
+.sidebar-menu.el-menu--collapse :deep(.el-menu-item) {
+  justify-content: center;
+  padding: 0 !important;
+}
+
+.sidebar-menu.el-menu--collapse :deep(.el-menu-item .el-icon) {
+  margin-right: 0;
 }
 
 .sidebar-menu :deep(.el-menu-item.is-active .el-icon) {

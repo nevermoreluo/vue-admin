@@ -21,8 +21,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import AppSidebar from './components/AppSidebar.vue'
-import AppHeader from './components/AppHeader.vue'
+import AppSidebar from '@/layouts/components/AppSidebar.vue'
+import AppHeader from '@/layouts/components/AppHeader.vue'
 
 const isCollapse = ref(false)
 </script>
