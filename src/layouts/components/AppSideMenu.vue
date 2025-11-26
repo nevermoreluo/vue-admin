@@ -15,7 +15,7 @@
 import { defineComponent, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import SideMenuItem, { type MenuItem } from '@/layouts/components/SideMenuItem.vue'
+import SideMenuItem, { type MenuItem } from '@/layouts/components/AppSideMenuItem.vue'
 
 export default defineComponent({
     name: 'AppSideMenu',

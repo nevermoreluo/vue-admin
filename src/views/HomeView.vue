@@ -2,8 +2,8 @@
   <div class="dashboard">
     <el-row :gutter="20">
       <el-col v-for="card in summaryCards" :key="card.key" :xs="24" :sm="12" :md="12" :lg="6">
-        <el-card class="summary-card">
-          <div class="card-icon" :style="{ background: card.bg }">
+        <el-card class="summary-card" :style="{ background: card.bg }">
+          <div class="card-icon" >
             <el-icon :size="22">
               <component :is="card.icon" />
             </el-icon>
@@ -17,7 +17,7 @@
     </el-row>
 
     <el-row :gutter="20" class="chart-row">
-      <el-col :span="24">
+      <el-col :span="24" :xs="24" :sm="12" :md="12" :lg="12">
         <el-card class="chart-card" v-loading="loading">
           <div class="chart-header">
             <div>
@@ -31,6 +31,20 @@
           <div ref="chartRef" class="chart-container"></div>
         </el-card>
       </el-col>
+      <!-- <el-col :span="24" :xs="24" :sm="12" :md="12" :lg="6">
+        <el-card class="chart-card" v-loading="loading">
+          <div class="chart-header">
+            <div>
+              <h3>{{ t('home.charts.usageTitle') }}</h3>
+              <p class="chart-subtitle">
+                {{ t('home.charts.countLabel', { count: usageData.length }) }}
+              </p>
+            </div>
+            <el-button text :icon="Refresh" @click="refreshData"></el-button>
+          </div>
+          <div ref="chartRef" class="chart-container"></div>
+        </el-card>
+      </el-col> -->
     </el-row>
   </div>
 </template>
@@ -210,35 +224,63 @@ watch(usageData, () => {
 .summary-card {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
+  padding: 20px;
+  border: none;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.summary-card:hover .card-icon {
+  transform: scale(1.1);
 }
 
 .card-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card-label {
   margin: 0;
-  color: #888;
-  font-size: 16px;
+  color: #64748b;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .card-value {
-  margin: 4px 0 0;
-  font-size: 28px;
-  font-weight: 600;
+  margin: 8px 0 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
 }
 
 .chart-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   min-height: 400px;
 }
 
@@ -246,12 +288,21 @@ watch(usageData, () => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  padding: 0 10px;
+}
+
+.chart-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
 }
 
 .chart-subtitle {
   margin: 4px 0 0;
-  color: #888;
+  color: #94a3b8;
+  font-size: 14px;
 }
 
 .chart-container {
