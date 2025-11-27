@@ -38,10 +38,15 @@ export default defineComponent({
                 icon: 'House'
             },
             {
+                name: t('layout.menu.log'),
+                url: '/log',
+                icon: 'Document'
+            },
+            {
                 name: t('layout.menu.about'),
                 url: '/about',
                 icon: 'InfoFilled',
-            },
+            }
         ])
 
         return {

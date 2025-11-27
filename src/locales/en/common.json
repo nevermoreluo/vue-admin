@@ -1,4 +1,7 @@
 {
+  "common": {
+    "search": "Search"
+  },
   "login": {
     "badge": "ADMIN · SMART OPS",
     "heroTitle": "Build an efficient operations cockpit",
@@ -21,9 +24,24 @@
       }
     ],
     "stats": [
-      { "label": "Online users", "value": "1,204", "delta": "+8.4% QoQ", "trend": "up" },
-      { "label": "Pending tasks", "value": "87", "delta": "-12% QoQ", "trend": "down" },
-      { "label": "Completion rate", "value": "96%", "delta": "+3.1% QoQ", "trend": "up" }
+      {
+        "label": "Online users",
+        "value": "1,204",
+        "delta": "+8.4% QoQ",
+        "trend": "up"
+      },
+      {
+        "label": "Pending tasks",
+        "value": "87",
+        "delta": "-12% QoQ",
+        "trend": "down"
+      },
+      {
+        "label": "Completion rate",
+        "value": "96%",
+        "delta": "+3.1% QoQ",
+        "trend": "up"
+      }
     ],
     "cardTitle": "Administrator Login",
     "cardSubtitle": "Welcome back, please sign in",
@@ -53,7 +71,8 @@
     "title": "Operations Center",
     "menu": {
       "home": "Dashboard",
-      "about": "About"
+      "about": "About",
+      "log": "log"
     },
     "language": {
       "label": "Language",
@@ -82,5 +101,17 @@
     "errors": {
       "loadFailed": "Failed to load dashboard data"
     }
+  },
+  "logview": {
+    "title": "Log",
+    "daterange": "Date",
+    "type": "Type",
+    "search_key": "URL",
+    "type_options0": "Unknown",
+    "type_options1": "Illegal login",
+    "type_options2": "Forward failure",
+    "type_options3": "Response timeout",
+    "startdate": "Start date",
+    "enddate": "End date"
   }
 }

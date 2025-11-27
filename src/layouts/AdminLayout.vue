@@ -19,12 +19,24 @@
   </el-container>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
+<script lang="ts">
+import { ref, defineComponent } from 'vue'
 import AppSidebar from '@/layouts/components/AppSidebar.vue'
 import AppHeader from '@/layouts/components/AppHeader.vue'
 
-const isCollapse = ref(false)
+export default defineComponent({
+  name: 'AdminLayout',
+  components: {
+    AppSidebar,
+    AppHeader
+  },
+  data() {
+    return {
+      isCollapse: ref(false)
+    }
+  }
+})
+
 </script>
 
 <style scoped>
