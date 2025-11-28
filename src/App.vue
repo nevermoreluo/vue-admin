@@ -17,4 +17,12 @@ import { RouterView } from 'vue-router'
   width: 100%;
   min-height: 100vh;
 }
+
+.el-table .odd-row {
+  --el-table-tr-bg-color: var(--el-color-primary-light-9);
+}
+/* .el-table .even-row {
+  --el-table-tr-bg-color: var(--el-color-success-light-9);
+} */
+
 </style>

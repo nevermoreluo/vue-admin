@@ -106,6 +106,8 @@
     "title": "日志管理",
     "daterange": "日期",
     "type": "类型",
+    "data": "数据",
+    "url": "URL",
     "search_key": "URL关键字",
     "type_options0": "未知",
     "type_options1": "非法登录",
