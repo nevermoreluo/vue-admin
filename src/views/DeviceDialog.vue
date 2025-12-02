@@ -1,7 +1,8 @@
 <template>
     <el-dialog
+        class="device-dialog"
         v-model="dialogVisible"
-        width="50%"
+        :width="dialogWidth"
         :before-close="handleClose"
         :title="$t('devicelist.add_device')">
         
@@ -9,7 +10,7 @@
             <h3>{{ $t('devicelist.basic_info') }}</h3>
             <el-form label-position="right" label-width="100px">
                 <el-row :gutter="20">
-                    <el-col :span="12">
+                    <el-col :xs="24" :sm="12">
                         <el-form-item :label="$t('devicelist.usage')" required>
                             <el-select v-model="usage" :placeholder="$t('devicelist.usage')" style="width: 100%">
                                 <el-option
@@ -21,7 +22,7 @@
                             </el-select>
                         </el-form-item>
                     </el-col>
-                    <el-col :span="12">
+                    <el-col :xs="24" :sm="12">
                         <el-form-item :label="$t('devicelist.name')" required>
                             <el-input v-model="name" :placeholder="$t('devicelist.name')" />
                         </el-form-item>
@@ -29,7 +30,7 @@
                 </el-row>
 
                 <el-row :gutter="20">
-                    <el-col :span="12">
+                    <el-col :xs="24" :sm="12">
                         <el-form-item :label="$t('devicelist.supplier')" required>
                             <el-select v-model="supplier" :placeholder="$t('devicelist.supplier')" style="width: 100%">
                                 <el-option
@@ -41,7 +42,7 @@
                             </el-select>
                         </el-form-item>
                     </el-col>
-                    <el-col :span="12">
+                    <el-col :xs="24" :sm="12">
                         <el-form-item :label="$t('devicelist.type')" required>
                             <el-select v-model="type" :disabled="isEmpty(supplier)" :placeholder="isEmpty(supplier) ? $t('devicelist.supplier') : $t('devicelist.type')" style="width: 100%">
                                 <el-option
@@ -56,7 +57,7 @@
                 </el-row>
 
                 <el-row :gutter="20">
-                    <el-col :span="12">
+                    <el-col :xs="24" :sm="12">
                         <el-form-item :label="$t('devicelist.department')" required>
                             <el-select v-model="department" :placeholder="$t('devicelist.department')" style="width: 100%">
                                 <el-option
@@ -68,7 +69,7 @@
                             </el-select>
                         </el-form-item>
                     </el-col>
-                    <el-col :span="12">
+                    <el-col :xs="24" :sm="12">
                         <el-form-item :label="$t('devicelist.serial_number')">
                             <el-input v-model="serial_number" :placeholder="$t('devicelist.serial_number')" />
                         </el-form-item>
@@ -76,7 +77,7 @@
                 </el-row>
 
                 <el-row :gutter="20">
-                    <el-col :span="12">
+                    <el-col :xs="24" :sm="12">
                         <el-form-item :label="$t('devicelist.deploy_time')" required>
                             <el-date-picker
                                 v-model="deploy_time"
@@ -86,7 +87,7 @@
                             />
                         </el-form-item>
                     </el-col>
-                    <el-col :span="12">
+                    <el-col :xs="24" :sm="12">
                         <el-form-item :label="$t('devicelist.place')">
                             <el-input v-model="place" :placeholder="$t('devicelist.place')" />
                         </el-form-item>
@@ -152,7 +153,6 @@ export default defineComponent({
             default: () => []
         }
     },
-    
     data() {
         return {
             dialogVisible: ref(false),
@@ -165,11 +165,22 @@ export default defineComponent({
             online: '',
             supplier: '',
             deploy_time: '',
-            place: ''
+            place: '',
+            dialogWidth: '50%'
         }
+    },
+    mounted() {
+        this.setDialogWidth()
+        window.addEventListener('resize', this.setDialogWidth)
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.setDialogWidth)
     },
     methods: {
         isEmpty,
+        setDialogWidth() {
+            this.dialogWidth = window.innerWidth < 768 ? '90%' : '50%'
+        },
         handleClose(done: any) {
             done()
         },
@@ -178,6 +189,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
+
 .dialog-content {
     padding: 0 20px;
 }
