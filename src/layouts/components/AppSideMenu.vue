@@ -43,6 +43,11 @@ export default defineComponent({
                 icon: 'Document'
             },
             {
+                name: t('layout.menu.device'),
+                url: '/devicelist',
+                icon: 'Document'
+            },
+            {
                 name: t('layout.menu.about'),
                 url: '/about',
                 icon: 'InfoFilled',

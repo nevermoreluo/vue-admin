@@ -24,15 +24,21 @@ const router = createRouter({
           component: HomeView,
         },
         {
+          path: 'log',
+          name: 'log',
+          component: () => import('@/views/LogView.vue')
+        },
+        {
+          path: 'devicelist',
+          name: 'devicelist',
+          component: () => import('@/views/DeviceListView.vue')
+        },
+        {
           path: 'about',
           name: 'about',
           component: () => import('@/views/AboutView.vue'),
         },
-        {
-          path: 'log',
-          name: 'log',
-          component: () => import('@/views/LogView.vue')
-        }
+
       ],
     },
   ],

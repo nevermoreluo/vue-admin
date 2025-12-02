@@ -33,3 +33,23 @@ export const fetchDeviceUsage = async (): Promise<DeviceUsageResponse['data']> =
   )) as unknown as DeviceUsageResponse
   return response.data
 }
+
+export interface DeviceDeployItem {
+  name: string
+  value: string | number
+}
+
+export interface DeviceDeployResponse {
+  code: number
+  data: DeviceDeployItem[]
+}
+
+export const fetchDeviceDeployCount = async (params: {
+  deploy_time_start: string
+  deploy_time_end: string
+}): Promise<DeviceDeployResponse['data']> => {
+  const response = (await request.get('/homepage/data/device_deploy_count_time_line', {
+    params,
+  })) as unknown as DeviceDeployResponse
+  return response.data
+}

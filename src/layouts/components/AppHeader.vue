@@ -40,11 +40,11 @@
         </div>
         <template #dropdown>
           <el-dropdown-menu class="user-dropdown">
-            <el-dropdown-item command="profile">
+            <!-- <el-dropdown-item divided command="profile">
               <el-icon><User /></el-icon>
               Profile
-            </el-dropdown-item>
-            <el-dropdown-item divided command="logout">
+            </el-dropdown-item> -->
+            <el-dropdown-item command="logout">
               <el-icon><SwitchButton /></el-icon>
               {{ t('layout.user.logout') }}
             </el-dropdown-item>

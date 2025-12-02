@@ -1,6 +1,6 @@
 <template>
   <div class="pub-main-div">
-    <div class="pub-title-div">{{ $t('logview.title') }}</div>
+    <h1 class="pub-title-div">{{ $t('logview.title') }}</h1>
     <el-card class="box-card" >
       <div class="search-area">
         <el-row :gutter="20" class="search-row">

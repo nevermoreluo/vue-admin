@@ -1,6 +1,10 @@
 {
   "common": {
-    "search": "搜索"
+    "search": "搜索",
+    "enable": "启用",
+    "disable": "禁用",
+    "online": "在线",
+    "offline": "离线"
   },
   "login": {
     "badge": "ADMIN · 智慧运营",
@@ -72,7 +76,8 @@
     "menu": {
       "home": "首页",
       "about": "关于",
-      "log": "日志管理"
+      "log": "日志管理",
+      "device": "设备管理"
     },
     "language": {
       "label": "语言",
@@ -84,6 +89,9 @@
       "logout": "退出登录"
     }
   },
+  "about": {
+    "description": "用于练习前端页面"
+  },
   "home": {
     "summary": {
       "departments": "部门数量",
@@ -93,7 +101,8 @@
     },
     "charts": {
       "usageTitle": "设备使用情况",
-      "countLabel": "共 {count} 种设备类型"
+      "countLabel": "共 {count} 种设备类型",
+      "deployTitle": "设备部署情况"
     },
     "status": {
       "loading": "数据加载中..."
@@ -101,6 +110,31 @@
     "errors": {
       "loadFailed": "仪表盘数据加载失败"
     }
+  },
+  "devicelist": {
+    "title": "设备列表",
+    "device_type": "设备类型",
+    "device_usage": "设备用途",
+    "department": "部门",
+    "serial_number": "序列号",
+    "is_enable": "是否启用",
+    "is_online": "是否在线",
+    "device_name": "设备名称",
+    "device_model": "设备型号",
+    "device_number": "设备编号",
+    "last_login_time": "最后登录时间",
+    "setup_time": "接入时间",
+    "add_device": "添加设备",
+    "basic_info": "设备基本信息",
+    "connection_info": "设备连接信息",
+    "usage": "设备用途",
+    "name": "设备名称",
+    "supplier": "供应商",
+    "type": "设备型号",
+    "deploy_time": "接入时间",
+    "place": "位置",
+    "enable": "启用",
+    "disable": "禁用"
   },
   "logview": {
     "title": "日志管理",

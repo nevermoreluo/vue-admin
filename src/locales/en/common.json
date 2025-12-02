@@ -1,6 +1,10 @@
 {
   "common": {
-    "search": "Search"
+    "search": "Search",
+    "enable": "Enable",
+    "disable": "Disable",
+    "online": "Online",
+    "offline": "Offline"
   },
   "login": {
     "badge": "ADMIN · SMART OPS",
@@ -72,7 +76,8 @@
     "menu": {
       "home": "Dashboard",
       "about": "About",
-      "log": "log"
+      "log": "Log",
+      "device": "Device"
     },
     "language": {
       "label": "Language",
@@ -84,6 +89,9 @@
       "logout": "Log out"
     }
   },
+  "about": {
+    "description": "For practice"
+  },
   "home": {
     "summary": {
       "departments": "Departments",
@@ -93,7 +101,8 @@
     },
     "charts": {
       "usageTitle": "Device Usage",
-      "countLabel": "{count} device types"
+      "countLabel": "{count} device types",
+      "deployTitle": "Device deploy count"
     },
     "status": {
       "loading": "Loading data..."
@@ -101,6 +110,31 @@
     "errors": {
       "loadFailed": "Failed to load dashboard data"
     }
+  },
+  "devicelist": {
+    "title": "Device List",
+    "device_type": "Device Type",
+    "device_usage": "Device Usage",
+    "department": "Department",
+    "serial_number": "Serial Number",
+    "is_enable": "IsEnable",
+    "is_online": "IsOnline",
+    "device_name": "Device Name",
+    "device_model": "Device Model",
+    "device_number": "Device Number",
+    "last_login_time": "Last Login Time",
+    "setup_time": "Setup Time",
+    "add_device": "Add Device",
+    "basic_info": "Device Basic Info",
+    "connection_info": "Device Connection Info",
+    "usage": "Device Usage",
+    "name": "Device Name",
+    "supplier": "Supplier",
+    "type": "Device Type",
+    "deploy_time": "Deploy Time",
+    "place": "Place",
+    "enable": "Enable",
+    "disable": "Disable"
   },
   "logview": {
     "title": "Log",
